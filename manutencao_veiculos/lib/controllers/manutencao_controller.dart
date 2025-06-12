@@ -1,5 +1,8 @@
+import 'package:manutencao_veiculos/models/manutencao_model.dart';
+import 'package:manutencao_veiculos/services/veiculo_dbhelper.dart';
+
 class ManutencaoController {
-  final _dbHelper = VeiculoDBHelper();
+  final _dbHelper = VeiculoDbhelper();
 
   //métodos do Crud
 
@@ -9,7 +12,7 @@ class ManutencaoController {
   }
 
   Future<List<Manutencao>> readManutencaoForVeiculo(int veiculoId) async{
-    return _dbHelper.getManutencaoForVeiculo(veiculoId);
+    return _dbHelper.getManutencoesForVeiculo(veiculoId);
   }
   //retrona o id
   Future<int> deleteManutencao(int id) async{
